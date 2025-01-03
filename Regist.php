@@ -9,6 +9,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <title>Regist Page</title>
+
+    <style>
+        body {
+            background-image: url("lbr.jpeg");
+        }
+    </style>    
 </head>
 
 <body class="bg-primary">
@@ -18,22 +24,22 @@
             $password = md5($_POST['password']);
 
             if(empty($username) || empty($password)) {
-                echo '<script>alert("Username atau Password tidak boleh kosong!");</script>';
+                echo "<div class='alert alert-danger text-center'>Pendaftaran gagal</div>";
             } else {
                 
             $query = mysqli_query($koneksi, "INSERT INTO login(username,password) values('$username','$password')");
 
             if($query) {
-                echo '<script>alert("Selamat, Pendaftaran berhasil,Silahkan Login")</script>';
+                echo "<div class='alert alert-info text-center'>Pendaftaran Berhasil</div>";
             } else {
-                echo '<script>alert("Selamat, Pendaftaran gagal")</script>';
+                echo "<div class='alert alert-danger text-center'>Pendaftaran gagal</div>";
             }
         }
      }
     ?>
     <section>
         
-        <div class="container mt-5 pt-5">
+        <div class="container mt-5 pt-5 shadow">
             <div class="row">
                 <div class="col-12 col-sm-8 col-md-6 m-auto">
                     <div class="card border-0 shadow">

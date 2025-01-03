@@ -7,33 +7,47 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <link rel="stylesheet" href="Tabel.css">
+    <link rel="stylesheet" href="Tabel1.css">
     <title>Tabel Kampus</title>
 </head>
 
 <body class="">
     
     <!--Nav-->
-    <div class="nav bg-primary">
-        <ul class="nav ms-4">
-            <li class="nav-item">
-              <a class="nav-link link-light" href="Home.php">Home</a>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+      <div class="container">
+        <a class="navbar-brand" href="#">Perpustakaan Online</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="Home.php">Home</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link link-light" href="Logout.php">Log Out</a>
+              <a class="nav-link" href="#">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Contact</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="Logout.php">Logout</a>
             </li>
           </ul>
-    </div>
+        </div>
+      </div>
+    </nav>
     <!--Nav-->
 
 
-    <div class="mt-4">
-        <h1 class="text-center">Tabel Kampus</h1>
+    <div class="mt-5" id="judul">
+        <h1 class="text-center">Tabel Peminjaman</h1>
     </div>
 
         <!-- Button trigger modal -->
-         <div class="container ps-0">
-          <button type="button" class="btn btn-primary float-Start mb-3" data-bs-toggle="modal" data-bs-target="#PPmodal">
+         <div class="container ps-0" id="btn">
+          <button type="button" class="btn btn-primary float-Start" data-bs-toggle="modal" data-bs-target="#PPmodal">
             INSERT
           </button>
         </div>
@@ -71,13 +85,16 @@
     <!-- Modal -->
 
     <!--Tabel-->
-<div style="overflow-y:auto;" class="table-responsive">
+<div style="overflow-y:auto;" class="table-responsive mt-5">
     <table class="table table-dark table-striped table-hover table-bordered container table-responsive">
         <thead>
             <tr>
-                <th>Id</th>
-                <th>Nama</th>
-                <th>Jurusan</th>
+                <th>Id Peminjam</th>
+                <th>Nama Peminjam</th>
+                <th>Nama Buku</th>
+                <th>Alamat</th>
+                <th>Nomor Hp</th>
+                <th>Batas Pengembalian</th>
                 <th>Update</th>
                 <th>Delete</th>
             </tr>
@@ -97,6 +114,9 @@
                             <tr>
                                 <td><?php echo $row['Id']?></td>
                                 <td><?php echo $row['Nama']?></td>
+                                <td><?php echo $row['Jurusan']?></td>
+                                <td><?php echo $row['Jurusan']?></td>
+                                <td><?php echo $row['Jurusan']?></td>
                                 <td><?php echo $row['Jurusan']?></td>
                                 <td><a href="update_page_1.php?id=<?php echo $row['Id']?>" class="btn btn-success">Update</a></td>
                                 <td><a href="delete_page_1.php?id=<?php echo $row['Id']?>" class="btn btn-danger">Delete</a></td>
